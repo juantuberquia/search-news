@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import Headering from "./components/Headering.jsx";
 import Form from "./components/Form.jsx";
 import ShowNews from "./components/ShowNews";
+import styles from "./App.module.css";
 
 function App() {
   // array de noticias, articulos
@@ -25,7 +26,7 @@ function App() {
   return (
     <Fragment>
       <Headering />
-      <div className="container white">
+      <div className={`${styles.container} white`}>
         <Form setCategory={setCategory} setCountry={setCountry} />
         <ShowNews news={news} />
       </div>

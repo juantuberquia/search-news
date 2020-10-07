@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Form.module.css";
 import useSelect from "../hooks/useSelect";
 import useCountry from "../hooks/useCountry";
-import Error from "./Error";
+import PropTypes from "prop-types";
 
 const Form = ({ setCategory, setCountry }) => {
   // opciones de noticias
@@ -37,7 +37,6 @@ const Form = ({ setCategory, setCountry }) => {
 
   return (
     <div className={`${styles.search} row`}>
-      <Error message="Elegir una opcion" />
       <div className="col s12 m8 offset-m2 ">
         <form onSubmit={handleSubmit}>
           <h2 className={styles.heading}> Encuentra Noticias por Categoria</h2>
@@ -54,6 +53,11 @@ const Form = ({ setCategory, setCountry }) => {
       </div>
     </div>
   );
+};
+
+Form.propTypes = {
+  setCategory: PropTypes.func.isRequired,
+  setCountry: PropTypes.func.isRequired,
 };
 
 export default Form;

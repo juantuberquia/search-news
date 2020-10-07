@@ -1,10 +1,9 @@
 import React from "react";
 import styles from "./ShowNews.module.css";
+import PropTypes from "prop-types";
 
 const ShowNews = ({ news }) => {
   // col s12 m6 14
-
-  const [title, urlToImage, author, description, url] = news;
 
   return (
     <div className={`${styles.container_main} `}>
@@ -34,4 +33,7 @@ const ShowNews = ({ news }) => {
   );
 };
 
+ShowNews.propTypes = {
+  news: PropTypes.array.isRequired,
+};
 export default ShowNews;
